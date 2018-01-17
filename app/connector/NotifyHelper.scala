@@ -5,19 +5,6 @@ import play.api.Logger
 
 object NotifyHelper {
 
-  def notifyMeOnOpen: Unit = Logger.warn("\n\n\n My CircuitBreaker is now open, and will not close for one minute")
-
-  def notifyMeOnClose: Unit = Logger.warn("\n\n\n My CircuitBreaker is now close")
-
-  def notifyMeOnHalfOpen: Unit = Logger.warn("\n\n\n My CircuitBreaker is now half open")
-
-  def notifyMeOnCallSuccess(status: Long): Unit = Logger.warn(s"\n\n\n My CircuitBreaker is now on call success $status")
-
-  def notifyMeOnCallFailure(status: Long): Unit = Logger.warn(s"\n\n\n My CircuitBreaker is now on call failure $status")
-
-  def notifyMeOnCallBreakOpen(): Unit = Logger.warn("\n\n\n My CircuitBreaker is now close")
-
-
   //HootSuite
   def defaultLoggingInvocationListener: CircuitBreakerInvocationListener =
     new CircuitBreakerInvocationListener {
